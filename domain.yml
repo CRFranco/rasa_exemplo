@@ -1,0 +1,96 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - subscribe
+  - inform_email
+  - inform_frequency
+  - out_of_scope
+  - give_time
+  - my_name:
+      use_entities:
+        - name
+  - mobile_number:
+      use_entities:
+        - number
+
+entities:
+  - name
+  - number
+
+actions:
+  - action_show_time  
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_email:
+  - text: What is your email address?
+
+  utter_ask_frequency:
+  - text: How often do you want to receive emails from me?
+
+  utter_subscribed:
+  - text: You're all set! Check your inbox at {email} to confirm your subscription. You will receive emails {frequency}.
+
+  utter_out_of_scope:
+  - text: Sorry, I can't handle that request 1.
+
+  utter_ask_name:
+  - text: What is your name?
+
+  utter_ask_number:
+  - text: What is your mobile number?
+
+  utter_name:
+  - text: My name is HAL.
+
+  utter_detailed_thanks:
+  - text: "Thanks for providing the given details \nName: {name},\nMobile Number: {number}"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+forms:
+  newsletter_form:
+    email:
+      - type: from_text
+    frequency:
+      - type: from_text
+
+
+slots:
+  email:
+    type: text
+    influence_conversation: false
+  frequency:
+    type: text
+    influence_conversation: false
+  name:
+    type: text
+  number:
+    type: text
