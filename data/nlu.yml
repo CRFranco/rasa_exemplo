@@ -1,0 +1,152 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - What is 2 + 2?
+    - Who's the US President?
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+
+- intent: subscribe
+  examples: |
+    - I want to get the newsletter
+    - Can you send me the newsletter?
+    - Can you sign me up for the newsletter?
+    - I want to subscribe to a newsletter.
+
+- intent: inform_email
+  examples: |
+    - My email is example@example.com
+    - random@example.com
+    - Please send it to anything@example.com
+    - Email is something@example.com
+
+- intent: inform_frequency
+  examples: |
+    - every week
+    - once a week
+    - twice per month
+    - as ofter as possible
+    - once a month
+
+
+- intent: give_time
+  examples: |
+    - can you tell me what time it is
+    - tell me the time
+    - got the time
+    - what time is it
+
+- intent: tell_name
+  examples: |
+    - what is your name?
+    - tell me your name
+    - what others call you
+    - what should i call you?
+
+
+- intent: my_name
+  examples: |
+    - my name is [cristiano]{"entity":"name","value":"cristiano"}
+    - my name is [cecilia]{"entity":"name","value":"cecilia"}
+    - my name is [catarina]{"entity":"name","value":"catarina"}
+    - [cristiano]{"entity":"name","value":"cristiano"} is my name
+    - people call me [cristiano]{"entity":"name","value":"cristiano"}
+
+- intent: mobile_number
+  examples: |
+    - my number is [8209829808]{"entity":"number"}
+    - [8209829808]{"entity":"number"}
+    - [8209829808]{"entity":"number"} is my number
+    - my nobile number is [8209829808]{"entity":"number"}

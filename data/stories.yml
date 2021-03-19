@@ -1,0 +1,64 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: greet and subscribe
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: subscribe
+  - action: newsletter_form
+  - active_loop: newsletter_form
+  - active_loop: null
+  - action: utter_subscribed
+
+- story: path about time
+  steps:
+  - intent: give_time
+  - action: action_show_time
+
+
+- story: happy name path
+  steps:
+  - intent: tell_name
+  - action: utter_name
+  - action: utter_ask_name
+  - intent: my_name
+    entities:
+    - name: "Cecilia"
+  - slot_was_set:
+    - name: "Cecilia"
+  - action: utter_ask_number
+  - intent: mobile_number
+    entities:
+    - number: "8209829808"
+  - slot_was_set:
+    - number: "8209829808"
+  - action: utter_detailed_thanks
